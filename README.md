@@ -24,7 +24,7 @@ cross-validation, and serves evaluation + inference through a Streamlit app.
 
 ```
 .
-├── data/                       # Dataset folder (Titanic train.csv is downloaded/placed here)
+├── data/                       # Small sample of the Titanic data (full dataset: https://www.kaggle.com/competitions/titanic/data)
 ├── download_data.py            # Securely fetches the dataset from Kaggle via the Kaggle API
 ├── preprocessing.py            # TitanicPreprocessor: feature engineering + scaling (leakage-safe)
 ├── model.py                    # TitanicMLP: the PyTorch model definition
@@ -50,7 +50,7 @@ cross-validation, and serves evaluation + inference through a Streamlit app.
 
 **Requirements:**
 
-- Python 3.10 – 3.12
+- Python 3.10 – 3.14
 - A Kaggle account (to download the dataset)
 
 It is recommended to use a virtual environment:
@@ -105,6 +105,16 @@ and skip the download.
 ---
 
 ## 🚀 Running the Pipeline
+
+> ⚠️ **Important — don't train on the sample data shipped here.**
+> The `data/` folder contains only a **small sample** of the Titanic dataset, so training on it
+> directly will produce **poor, meaningless results**. Before running, do one of the following:
+>
+> 1. **Use the full dataset** — download `train.csv` from the
+>    [Kaggle Titanic competition page](https://www.kaggle.com/competitions/titanic/data)
+>    and replace the file in `data/`, **or**
+> 2. **Delete the `data/` folder** (or the file inside it) and let the pipeline download the
+>    full dataset automatically from Kaggle when you run `train.py`.
 
 ### 1. Train the model
 
